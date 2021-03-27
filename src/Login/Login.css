@@ -1,0 +1,33 @@
+.Login{
+    width: 100%;
+}
+.Login_input_div{
+    width: 50%;
+}
+.Login_input_box{
+    margin-top: 20px;
+    width: 40%;
+    height: 30px;
+}
+.Login_input_submit{
+    margin-top: 20px;
+    width: 40%;
+    height: 50px;
+    background-color: #046CC4;
+    color: white;
+    font-size: 20px;
+    font: bold;
+}
+.Login_button_signup{
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 15px;
+    border-color: skyblue;
+    background-color: white;
+}
+.Login_title{
+    color: #046CC4;
+    font-size: 50px;
+    padding-top: 40px;
+    margin-bottom: 80px;
+}
