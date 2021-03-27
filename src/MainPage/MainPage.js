@@ -40,10 +40,47 @@ class MainPage extends Component{
         <div className="MainPage_down">
           <div className="MainPage_Notice">
             <p id="MainPage_notice">공지사항</p>
+            <p id="MainPage_more">more+</p>
             <div id="MainPage_notice1">  
-              <img className="MainPage_noticeImg" src="./Do-it 로고.jpg"></img>
+              <object className="MainPage_noticeImgSet">
+                  <img className="MainPage_noticeImg" src="./Do-it 로고.jpg"></img>
+              </object>   
+              <p id="MainPage_header">글머리</p>
+              <p id="MainPage_title">Do-iT 공지사항 제목</p>
+              <p id="MainPage_writer1">작성자</p>
+              <p id="MainPage_date1">2021.01.01</p>
             </div>
-            
+            <div id="MainPage_notice2">  
+              <object className="MainPage_noticeImgSet">
+                  <img className="MainPage_noticeImg" src="./Do-it 로고.jpg"></img>
+              </object>  
+              <p id="MainPage_header">글머리</p>
+              <p id="MainPage_title">Do-iT 공지사항 제목</p>
+              <p id="MainPage_writer2">작성자</p>
+              <p id="MainPage_date2">2021.01.01</p>
+            </div>
+          </div>
+          <div className="MainPage_Study">
+            <p id="MainPage_notice">스터디/프로젝트</p>
+            <p id="MainPage_more">more+</p>
+            <div id="MainPage_notice1">  
+              <object className="MainPage_noticeImgSet">
+                  <img className="MainPage_noticeImg" src="./Do-it 로고.jpg"></img>
+              </object>   
+              <p id="MainPage_header">글머리</p>
+              <p id="MainPage_title">Do-iT 스터디/프로젝트 제목</p>
+              <p id="MainPage_writer1">작성자</p>
+              <p id="MainPage_date1">2021.01.01</p>
+            </div>
+            <div id="MainPage_notice2">  
+              <object className="MainPage_noticeImgSet">
+                  <img className="MainPage_noticeImg" src="./Do-it 로고.jpg"></img>
+              </object>  
+              <p id="MainPage_header">글머리</p>
+              <p id="MainPage_title">Do-iT 스터디/프로젝트 제목</p>
+              <p id="MainPage_writer2">작성자</p>
+              <p id="MainPage_date2">2021.01.01</p>
+            </div>
           </div>
         </div>
       </div>    
