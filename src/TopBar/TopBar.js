@@ -20,7 +20,7 @@ export default function TopBar() {
                     <Link to ='/'>
                       <button className="senses" id="senses_home">Home</button>
                     </Link>
-                    <Link to ='/NoticeList'>
+                    <Link to ='/NoticeDetail'>
                       <button className="senses">공지사항</button>
                     </Link>
                     <Link to='/StudyList'>
