@@ -1,0 +1,54 @@
+.Signup_radio input[type="radio"]{
+    display: none;
+}
+.Signup_radio input[type="radio"] + span{
+    display:inline-block;
+    background:none;
+    border:1px solid #dfdfdf;  
+    padding:0px 10px;
+    text-align:center;
+    height:35px;
+    line-height:33px;
+    font-weight:500;
+    cursor:pointer;
+}
+.Signup_radio input[type="radio"]:checked + span{
+    border:1px solid #23a3a7;
+    background:#23a3a7;
+    color:#fff;
+}
+.Signup_input_box{
+    width: 100%;
+    height: 30px;
+}
+.Signup_input_div{
+    margin-top: 10px;
+    text-align: left;
+}
+.Signup_input_div_total{
+    width: 20%;
+    text-align: center;
+}
+.Signup_title{
+    color: #046CC4;
+    font-size: 50px;
+    padding-top: 40px;
+    margin-bottom: 80px;
+}
+.Signup_input_submit{
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #046CC4;
+    color: white;
+    font-size: 20px;
+    font: bold;
+}
+.Signup_button{
+    margin-top: -5px;
+    height: 25px;
+    border-radius: 15px;
+    border-color: skyblue;
+    background-color: white;
+    float: right;
+}

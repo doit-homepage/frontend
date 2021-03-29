@@ -47,6 +47,7 @@ class MainPage extends Component{
               </object>   
               <p id="MainPage_header">글머리</p>
               <p id="MainPage_title">Do-iT 공지사항 제목</p>
+              <p id="MainPage_like1">좋아요: 5</p>
               <p id="MainPage_writer1">작성자</p>
               <p id="MainPage_date1">2021.01.01</p>
             </div>
@@ -56,6 +57,7 @@ class MainPage extends Component{
               </object>  
               <p id="MainPage_header">글머리</p>
               <p id="MainPage_title">Do-iT 공지사항 제목</p>
+              <p id="MainPage_like2">좋아요: 5</p>
               <p id="MainPage_writer2">작성자</p>
               <p id="MainPage_date2">2021.01.01</p>
             </div>
@@ -69,6 +71,7 @@ class MainPage extends Component{
               </object>   
               <p id="MainPage_header">글머리</p>
               <p id="MainPage_title">Do-iT 스터디/프로젝트 제목</p>
+              <p id="MainPage_like1"> 모집인원: 5</p>
               <p id="MainPage_writer1">작성자</p>
               <p id="MainPage_date1">2021.01.01</p>
             </div>
@@ -78,6 +81,7 @@ class MainPage extends Component{
               </object>  
               <p id="MainPage_header">글머리</p>
               <p id="MainPage_title">Do-iT 스터디/프로젝트 제목</p>
+              <p id="MainPage_like2">모집인원: 5</p>
               <p id="MainPage_writer2">작성자</p>
               <p id="MainPage_date2">2021.01.01</p>
             </div>

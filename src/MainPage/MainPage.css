@@ -85,6 +85,13 @@
     font-size: 1vw;
     font-weight: bold;
 }
+#MainPage_like1{
+    position: absolute;
+    right: 56%;
+    bottom: 15%;
+    text-align: right;
+    font-size: 0.8vw;
+}
 #MainPage_writer1{
     position: absolute;
     right: 56%;
@@ -108,6 +115,13 @@
     border: 1px solid black;
     border-radius: 30px;
     z-index:2;
+}
+#MainPage_like2{
+    position: absolute;
+    right: 5%;
+    bottom: 15%;
+    text-align: right;
+    font-size: 0.8vw;
 }
 #MainPage_writer2{
     position: absolute;
