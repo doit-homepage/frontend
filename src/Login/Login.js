@@ -11,7 +11,7 @@ function Login() {
         return true;
     }
     var submit_action = (event) => {
-        axios.post('/user/login',state).then((res) => {
+        axios.post('/api/user/login',state).then((res) => {
             if(res.data.success == true){
                 window.location.href = '/'
             } else {
