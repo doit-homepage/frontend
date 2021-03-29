@@ -25,6 +25,13 @@
     border-color: skyblue;
     background-color: white;
 }
+.Login_button_signup:hover{
+    border-color: skyblue;
+    background-color: skyblue;
+}
+.Login_button_signup:focus{
+    outline: 0;
+}
 .Login_title{
     color: #046CC4;
     font-size: 50px;

@@ -8,14 +8,16 @@ var url = "http://localhost:3000/"
 const Signup = () => {
     const [startDate, setStartDate] = useState(new Date());
     var state={
-        id: ''
+        id: '',
+        pw: '',
+        pw_check:''
     }
     var submit_check = (event) => {
         event.preventDefault();
         return true;
     }
     var submit_action = (event) => {
-        axios.post('/user',state).then((res) => {
+        axios.post('/api/user',state).then((res) => {
             if(res.data.success == true){
                 window.location.href = '/login'
             } else {
@@ -24,7 +26,7 @@ const Signup = () => {
         })
     }
     var id_check = () => {
-        axios.post('/user/checkId',{id: state['id']}).then((res)=>{
+        axios.post('/api/user/checkId',{id: state['id']}).then((res)=>{
             if(res.data.success == true){
                 alert('사용가능한 아이디입니다')
             }
@@ -35,6 +37,16 @@ const Signup = () => {
     }
     var ChangeHandle = (e) => {
         state[e.target.name] = e.target.value
+    }
+    
+    var onChangePassword = (e) => {
+        console.log(state["pw"] + state['pw_check'])
+        ChangeHandle(e)
+        if(state["pw"] != state['pw_check']){
+            document.getElementById("Signup_noPassword").style.display = "block";
+        } else {
+            document.getElementById("Signup_noPassword").style.display = "none";
+        }
     }
     return (
         <div className="Signup">
@@ -48,11 +60,12 @@ const Signup = () => {
                         </div>
                         <div className = "Signup_input_div">
                             비밀번호<br />
-                            <input type='password' className="Signup_input_box" placeholder='비밀번호' name = "pw" onChange = {ChangeHandle}></input><br />
+                            <input type='password' className="Signup_input_box" placeholder='비밀번호' name = "pw" onChange = {onChangePassword}></input><br />
                         </div>
                         <div className = "Signup_input_div">
                             비밀번호 확인<br />
-                            <input type='password' className="Signup_input_box" placeholder='비밀번호 확인'></input><br />
+                            <input type='password' className="Signup_input_box" placeholder='비밀번호 확인' name="pw_check" onChange = {onChangePassword}></input><br />
+                            <span id="Signup_noPassword">비밀번호가 일치하지 않습니다</span>
                         </div>
                         <div className = "Signup_input_div">
                             이름<br/>
