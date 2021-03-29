@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import React, {Component} from 'react';
 import styles from './TopBar.css';
+import MainPage from '../MainPage/MainPage.js';
 import { Link, Route, BrowserRouter as Router } from "react-router-dom"
 
 export default function TopBar() {
@@ -9,7 +10,7 @@ export default function TopBar() {
 
         <div className="top-bar"> 
             <div className="top-bar_first">
-                <div className="logo-container">
+                <div className="top-bar_logo-container">
                     <a href="/" className="top-bar_logo">
                       Do-iT!
                     </a>
@@ -18,19 +19,19 @@ export default function TopBar() {
             <form className="top-bar_second">
                 <div className="top-bar_second_container">
                     <Link to ='/'>
-                      <button className="senses" id="senses_home">Home</button>
+                      <button className="top-bar_senses" id="top-bar_senses_home">Home</button>
                     </Link>
-                    <Link to ='/NoticeDetail'>
-                      <button className="senses">공지사항</button>
+                    <Link to ='/NoticeList'>
+                      <button onClick="endTime()" className="top-bar_senses">공지사항</button>
                     </Link>
                     <Link to='/StudyList'>
-                      <button className="senses">스터디/프로젝트</button>
+                      <button onClick="endTime()" className="top-bar_senses">스터디/프로젝트</button>
                     </Link>
                     <Link to ='/'>
-                      <button className="senses">컴파일러</button>
+                      <button onClick="endTime()" className="top-bar_senses">컴파일러</button>
                     </Link>
                     <Link to ='/'>
-                      <button className="senses">마이페이지</button>
+                      <button onClick="endTime()" className="top-bar_senses">마이페이지</button>
                     </Link>
                 </div>
             </form> 
