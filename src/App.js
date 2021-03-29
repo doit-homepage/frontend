@@ -7,6 +7,7 @@ import StudyList from './StudyList/StudyList.js';
 import TopBar from './TopBar/TopBar.js';
 import StudyDetail from './StudyDetail/StudyDetail.js'
 import Login from './Login/Login.js'
+import Signup from './Signup/Signup.js'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/NoticeList' component = {NoticeList}/>
           <Route exact path='/StudyDetail' component = {StudyDetail}/>
           <Route exact path='/Login' component = {Login}/>
+          <Route exact path='/Signup' component = {Signup}/>
         </div>
       </Router>
     </div>
