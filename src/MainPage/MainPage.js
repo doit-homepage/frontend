@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import TopBar from '../TopBar/TopBar.js';
 import style from './MainPage.css';
+import { Link, Route, BrowserRouter as Router } from "react-router-dom"
+import axios from 'axios';
 
 class MainPage extends Component{
     render(){
@@ -9,23 +11,35 @@ class MainPage extends Component{
       ObjectArray[1] = "./do-it 사진.jpg";
       ObjectArray[2] = "./do-it 사진2.jpg";
       ObjectArray[3] = "./do-it 사진3.png";
+      var timer1;
+      var timer2;
       function changeImage(){
         document.getElementById("MainPage_image").src=ObjectArray[n++];
         if(n>ObjectArray.length-1){
           n=1;
         }
-        setTimeout(changeImage,7000);
       }
-      setTimeout(changeImage,0);
+      timer1 = setInterval(changeImage,7000);
+      
       var k=1
       function changeBack(){
         document.getElementById("MainPage_back").src=ObjectArray[k++];
         if(k>ObjectArray.length-1){
           k=1;
         }
-        setTimeout(changeBack,7000);
       }
-      setTimeout(changeBack,0);
+     
+      timer2 = setInterval(changeBack,7000);
+
+      function endTime(){
+        clearInterval(timer1);
+        clearInterval(timer2);
+      }
+      function test(){
+        axios.post('/api/asdfs',{}).then((res)=>{
+          console.log(res)
+        })
+      }
       return (
       <div className="MainPage">
         <div className="MainPage_up">
@@ -40,7 +54,9 @@ class MainPage extends Component{
         <div className="MainPage_down">
           <div className="MainPage_Notice">
             <p id="MainPage_notice">공지사항</p>
-            <p id="MainPage_more">more+</p>
+            <Link to="/NoticeList">
+              <p onClick="endTime()" id="MainPage_more">more+</p>
+            </Link>
             <div id="MainPage_notice1">  
               <object className="MainPage_noticeImgSet">
                   <img className="MainPage_noticeImg" src="./Do-it 로고.jpg"></img>
@@ -64,7 +80,9 @@ class MainPage extends Component{
           </div>
           <div className="MainPage_Study">
             <p id="MainPage_notice">스터디/프로젝트</p>
-            <p id="MainPage_more">more+</p>
+            <Link to="/StudyList">
+              <p onClick="endTime()" onClick={endTime} id="MainPage_more">more+</p>
+            </Link>
             <div id="MainPage_notice1">  
               <object className="MainPage_noticeImgSet">
                   <img className="MainPage_noticeImg" src="./Do-it 로고.jpg"></img>
