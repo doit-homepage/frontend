@@ -5,12 +5,8 @@ import styles from './StudyDetail.css';
 function StudyDetail() {
   return (
     <div className="StudyDetail">
-<<<<<<< HEAD
       
       <div className="StudyDetail_text">
-=======
-      <div className="text">
->>>>>>> 81d5d0c7145044c7a75837131f1374689c923005
         스터디 / 프로젝트
         </div>
         <hr width = "1020"></hr>
