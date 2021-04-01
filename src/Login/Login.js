@@ -1,7 +1,8 @@
 import { Link, Route, BrowserRouter as Router } from "react-router-dom"
 import './Login.css'
 import axios from 'axios'
-function Login() {
+function Login(props) {
+    const { getToken, setToken } = props
     var state = {}
     var ChangeHandle = (e) => {
         state[e.target.name] = e.target.value
@@ -13,6 +14,8 @@ function Login() {
     var submit_action = (event) => {
         axios.post('/api/user/login',state).then((res) => {
             if(res.data.success == true){
+                console.log(res.data.data)
+                setToken(res.data.data,true)
                 window.location.href = '/'
             } else {
                 alert("비밀번호 패스워드 확인")

@@ -61,4 +61,5 @@
 }
 #Signup_noPassword{
     display: none;
+    color: red;
 }
