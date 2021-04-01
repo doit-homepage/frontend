@@ -14,7 +14,10 @@ const Signup = () => {
         student_num: '',
         id_check: false,
         num_check: false,
-        email: ''
+        email: '',
+        authNum: '',
+        email_check: '',
+        auth: false
     }
     var submit_check = (event) => {
         event.preventDefault();
@@ -76,7 +79,19 @@ const Signup = () => {
         }
     }
     var mailauth = (e) => {
-        
+        axios.post('/api/auth/mail',{mail: state['email']}).then((res) => {
+            state['authNum'] = res.data
+        })
+    }
+    var mailauthCheck = (e) => {
+        if(state['authNum'] == state['email_check']){
+            state['auth'] = true;
+            alert("인증되었습니다.")
+        }
+        else{
+            state['auth'] = false;
+            alert("다시 확인해주세요")
+        }
     }
     return (
         <div className="Signup">
@@ -123,8 +138,8 @@ const Signup = () => {
                             <input type='text' className="Signup_input_box" placeholder='이메일' name="email" onChange={ChangeHandle}></input><br />
                         </div>
                         <div className="Signup_input_div">
-                            이메일 인증 코드 <button className="Signup_button">코드 확인</button><br />
-                            <input type='text' className="Signup_input_box" placeholder='이메일 인증 코드'></input><br />
+                            이메일 인증 코드 <button className="Signup_button" onClick={mailauthCheck}>코드 확인</button><br />
+                            <input type='text' className="Signup_input_box" placeholder='이메일 인증 코드' name="email_check" onChange={ChangeHandle}></input><br />
                         </div>
                         <div className="Signup_input_div">
                             전화번호<br />

@@ -5,7 +5,6 @@ import styles from './StudyDetail.css';
 function StudyDetail() {
   return (
     <div className="StudyDetail">
-      <TopBar/>
       <div className="text">
         스터디 / 프로젝트
         </div>
