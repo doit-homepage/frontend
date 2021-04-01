@@ -5,6 +5,7 @@ import styles from './StudyDetail.css';
 function StudyDetail() {
   return (
     <div className="StudyDetail">
+      
       <div className="StudyDetail_text">
         스터디 / 프로젝트
         </div>
