@@ -1,0 +1,82 @@
+.SudyDetail_text {
+  margin-top: 10%;
+  margin-left: 25%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.StudyDetail_studentnum,
+.SudyDetail_date,
+.StudyDetail_writerinfo {
+  display: inline;
+}
+
+.StudyDetail_studentnum {
+  margin-left: 50%;
+  color: #3689cf;
+}
+.StudyDetail_writerinfo {
+  margin-left: 10%;
+}
+
+.StudyDetail_Box_top {
+  background-color: #e2e2e2;
+  margin-top: 10px;
+  padding: 15px;
+  width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 50%;
+}
+
+.StudyDetail_writerinfo {
+  margin-top: 1%;
+  margin-left: 26%;
+  font-size: 20%;
+  color: #8b8b8b;
+}
+.StudyDetail_add {
+  margin-left: 70%;
+  font-size: 20%;
+  font-weight: bold;
+}
+.StudyDetail_Box_bottom {
+  background-color: #999999;
+  margin-top: 10px;
+  padding: 300px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.StudyDetail_next,
+.StudyDetail_bottomtext {
+  display: inline;
+}
+
+.StudyDetail_next {
+  margin-top: 10%;
+  margin-left: 27%;
+  font-size: 50%;
+}
+.StudyDetail_bottomtext {
+  font-size: 70%;
+}
+
+.StudyDetail_List {
+  background: #3689cf;
+  color: white;
+  margin-left: 70%;
+  padding: 0.5rem 1rem;
+
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+  display: inline-block;
+  width: 5%;
+
+  border: none;
+}
