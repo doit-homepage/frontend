@@ -6,16 +6,20 @@
 }
 
 .NoticeDetail_notice,
-.NoticeDetailLike {
+.NoticeDetail_Like {
   display: inline;
 }
 
+.NoticeDetail_notice {
+  font-size: 200%;
+}
 .NoticeDetail_Like {
   margin-left: 80%;
   color: #3689cf;
+  font-size: 100%;
 }
 
-.NoticeDetail_Box_top {
+.NoticeDetailBox_top {
   background-color: #e2e2e2;
   margin-top: 10px;
   padding: 15px;
@@ -37,7 +41,7 @@
   font-size: 20%;
   font-weight: bold;
 }
-.NoticeDetail_Box_bottom {
+.NoticeDetailBox_bottom {
   background-color: #999999;
   margin-top: 10px;
   padding: 300px;
@@ -56,11 +60,13 @@
   margin-left: 27%;
   font-size: 50%;
 }
+
 .NoticeDetail_bottomtext {
   font-size: 70%;
+  white-space: normal;
 }
 
-.NoticeDetailList {
+.NoticeDetail_List {
   background: #3689cf;
   color: white;
   margin-left: 70%;

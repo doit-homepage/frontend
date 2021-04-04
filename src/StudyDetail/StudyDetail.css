@@ -1,4 +1,4 @@
-.SudyDetail_text {
+.StudyDetail_text {
   margin-top: 10%;
   margin-left: 25%;
   font-size: 20px;
@@ -7,12 +7,12 @@
 
 .StudyDetail_studentnum,
 .SudyDetail_date,
-.StudyDetail_writerinfo {
+.StudyDetail_title {
   display: inline;
 }
 
 .StudyDetail_studentnum {
-  margin-left: 50%;
+  margin-left: 60%;
   color: #3689cf;
 }
 .StudyDetail_writerinfo {
@@ -36,11 +36,13 @@
   font-size: 20%;
   color: #8b8b8b;
 }
+
 .StudyDetail_add {
   margin-left: 70%;
   font-size: 20%;
   font-weight: bold;
 }
+
 .StudyDetail_Box_bottom {
   background-color: #999999;
   margin-top: 10px;
@@ -60,6 +62,7 @@
   margin-left: 27%;
   font-size: 50%;
 }
+
 .StudyDetail_bottomtext {
   font-size: 70%;
 }
