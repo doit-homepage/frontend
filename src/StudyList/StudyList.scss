@@ -1,19 +1,19 @@
 
 @import "stylesheet.scss";
 
-.NoticeTitle {
+.StudyTitle {
   margin : 20px 40px 10px 40px;
   font-size: 30px;
   font-weight: 900;
 }
 
-.NoticeHR{
+.StudyHR{
   margin-bottom: 6px;
 }
 
 li { float: left; width: calc(50%-30px);}
 
-.Notice_Card {
+.Study_Card {
   background-color: $white;
   border-radius: 6px;
   padding: 10px;
@@ -23,19 +23,19 @@ li { float: left; width: calc(50%-30px);}
   box-shadow: 5px 5px 10px rgb(189, 189, 189);
   margin : 23px;
 }
-.Notice_Image {
+.Study_Image {
   width: 80px;
   height: 80px;
   border-radius: 6px;
   margin-right : 20px;
   color : $grey;
 }
-.Notice_bullet{
+.Study_bullet{
   color : blue;
   font-size:12px;
   font-weight: 800;
 }
-.Notice_title {
+.Study_title {
   width: 352px;
   font-weight: 800;
   font-family: "Geomanist";
@@ -44,17 +44,17 @@ li { float: left; width: calc(50%-30px);}
   color: $text-black;
   margin-bottom: 6px;
 }
-.Notice_date {
+.Study_personnel {
   max-width: 352px;
   @include nunito-14-regular;
-  color: $text-grey;
+  color: blue;
   margin-bottom: 3px;
 }
-.Notice_authorName {
+.Study_authorName {
   @include nunito-14-regular;
   color: $text-grey;
 }
-.Notice_likes{
+.Study_likes{
   font-size: 15px;
   text-align: right;
   margin-bottom: 2px;
