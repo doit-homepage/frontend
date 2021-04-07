@@ -1,20 +1,25 @@
-.text {
+.NoticeDetail_text {
   margin-top: 10%;
   margin-left: 25%;
   font-size: 20px;
   font-weight: bold;
 }
 
-h1,
-h2 {
+.NoticeDetail_notice,
+.NoticeDetail_Like {
   display: inline;
 }
-h2 {
+
+.NoticeDetail_notice {
+  font-size: 200%;
+}
+.NoticeDetail_Like {
   margin-left: 80%;
   color: #3689cf;
+  font-size: 100%;
 }
 
-.Box_top {
+.NoticeDetailBox_top {
   background-color: #e2e2e2;
   margin-top: 10px;
   padding: 15px;
@@ -25,18 +30,18 @@ h2 {
   font-size: 50%;
 }
 
-.writerinfo {
+.NoticeDetail_writerinfo {
   margin-top: 1%;
   margin-left: 26%;
   font-size: 20%;
   color: #8b8b8b;
 }
-.add {
+.NoticeDetail_add {
   margin-left: 70%;
   font-size: 20%;
   font-weight: bold;
 }
-.Box_bottom {
+.NoticeDetailBox_bottom {
   background-color: #999999;
   margin-top: 10px;
   padding: 300px;
@@ -45,21 +50,23 @@ h2 {
   margin-right: auto;
 }
 
-h3,
-h4 {
+.NoticeDetail_next,
+.NoticeDetail_bottomtext {
   display: inline;
 }
 
-h3 {
+.NoticeDetail_next {
   margin-top: 10%;
   margin-left: 27%;
   font-size: 50%;
 }
-h4 {
+
+.NoticeDetail_bottomtext {
   font-size: 70%;
+  white-space: normal;
 }
 
-.List {
+.NoticeDetail_List {
   background: #3689cf;
   color: white;
   margin-left: 70%;
