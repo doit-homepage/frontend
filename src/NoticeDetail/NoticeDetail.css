@@ -21,9 +21,8 @@
 
 .NoticeDetailBox_top {
   background-color: #e2e2e2;
-  margin-top: 10px;
-  padding: 15px;
-  width: 980px;
+  padding: 0.8%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   font-weight: bold;
@@ -43,9 +42,8 @@
 }
 .NoticeDetailBox_bottom {
   background-color: #999999;
-  margin-top: 10px;
-  padding: 300px;
-  width: 300px;
+  padding: 15%;
+  width: 20%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -71,7 +69,6 @@
   color: white;
   margin-left: 70%;
   padding: 0.5rem 1rem;
-
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
