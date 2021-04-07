@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import TopBar from '../TopBar/TopBar.js';
-import style from './NoticeList.scss';
+import styles from './NoticeList.scss';
 
 function NoticeList() {
   return (

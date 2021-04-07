@@ -1,33 +1,21 @@
-// Colors
-$grey: rgba(226, 236, 246, 1);
-$white: rgba(255, 255, 255, 1);
+// // Colors
+// $grey: rgba(226, 236, 246, 1);
+// $white: rgba(255, 255, 255, 1);
 
-// Text colors
-$text-black: rgba(0, 0, 0, 1);
-$text-grey: rgba(65, 65, 65, 1);
+// // Text colors
+// $text-black: rgba(0, 0, 0, 1);
+// $text-grey: rgba(65, 65, 65, 1);
 
-// Typographies
-@mixin geomanist-24-500 {
-  font-family: "Geomanist";
-  font-size: 24px;
-  font-weight: 500;
-  line-height: normal;
-}
-@mixin nunito-14-regular {
-  font-family: "Nunito";
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 19px;
-}
-
-@font-face {
-  font-family: 'Geomanist';
-  src: url('font/Geomanist/Geomanist-Medium/geomanist-medium-webfont.eot');
-  src: url('font/Geomanist/Geomanist-Medium/geomanist-medium-webfont.eot?#iefix') format('embedded-opentype'),
-  url('font/Geomanist/Geomanist-Medium/geomanist-medium-webfont.woff2') format('woff2'),
-  url('font/Geomanist/Geomanist-Medium/geomanist-medium-webfont.woff') format('woff'),
-  url('font/Geomanist/Geomanist-Medium/geomanist-medium-webfont.ttf') format('truetype'),
-  url('font/Geomanist/Geomanist-Medium/geomanist-medium-webfont.svg#geomanistregular') format('svg');
-  font-weight: 500;
-  font-style: normal;
-}
+// // Typographies
+// @mixin geomanist-24-500 {
+//   font-family: "Geomanist";
+//   font-size: 24px;
+//   font-weight: 500;
+//   line-height: normal;
+// }
+// @mixin nunito-14-regular {
+//   font-family: "Nunito";
+//   font-size: 14px;
+//   font-weight: 400;
+//   line-height: 19px;
+// }

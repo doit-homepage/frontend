@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+
 import TopBar from '../TopBar/TopBar.js';
-import style from './StudyList.scss';
+import styles from './StudyList.scss';
 
 function StudyList() {
   return (
