@@ -1,0 +1,61 @@
+
+@import "stylesheet.scss";
+
+.NoticeTitle {
+  margin : 20px 40px 10px 40px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.NoticeHR{
+  margin-bottom: 6px;
+}
+
+li { float: left; width: calc(50%-30px);}
+
+.Notice_Card {
+  background-color: $white;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid $grey;
+  box-shadow: 5px 5px 10px rgb(189, 189, 189);
+  margin : 23px;
+}
+.Notice_Image {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  margin-right : 20px;
+  color : $grey;
+}
+.Notice_bullet{
+  color : blue;
+  font-size:12px;
+  font-weight: 800;
+}
+.Notice_title {
+  width: 352px;
+  font-weight: 800;
+  font-family: "Geomanist";
+  font-size: 20px;
+  line-height: normal;
+  color: $text-black;
+  margin-bottom: 6px;
+}
+.Notice_date {
+  max-width: 352px;
+  @include nunito-14-regular;
+  color: $text-grey;
+  margin-bottom: 3px;
+}
+.Notice_authorName {
+  @include nunito-14-regular;
+  color: $text-grey;
+}
+.Notice_likes{
+  font-size: 15px;
+  text-align: right;
+  margin-bottom: 2px;
+}
