@@ -1,61 +1,56 @@
 
-@import "stylesheet.scss";
+// @import "stylesheet.scss";
 
-.StudyTitle {
-  margin : 20px 40px 10px 40px;
-  font-size: 30px;
-  font-weight: 900;
-}
+// .StudyTitle {
+//   margin : 20px 40px 10px 40px;
+//   font-size: 30px;
+//   font-weight: 900;
+// }
 
-.StudyHR{
-  margin-bottom: 6px;
-}
+// .StudyHR{
+//   margin-bottom: 6px;
+// }
 
-li { float: left; width: calc(50%-30px);}
+// li { float: left; width: calc(50%-30px);}
 
-.Study_Card {
-  background-color: $white;
-  border-radius: 6px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  border: 1px solid $grey;
-  box-shadow: 5px 5px 10px rgb(189, 189, 189);
-  margin : 23px;
-}
-.Study_Image {
-  width: 80px;
-  height: 80px;
-  border-radius: 6px;
-  margin-right : 20px;
-  color : $grey;
-}
-.Study_bullet{
-  color : blue;
-  font-size:12px;
-  font-weight: 800;
-}
-.Study_title {
-  width: 352px;
-  font-weight: 800;
-  font-family: "Geomanist";
-  font-size: 20px;
-  line-height: normal;
-  color: $text-black;
-  margin-bottom: 6px;
-}
-.Study_personnel {
-  max-width: 352px;
-  @include nunito-14-regular;
-  color: blue;
-  margin-bottom: 3px;
-}
-.Study_authorName {
-  @include nunito-14-regular;
-  color: $text-grey;
-}
-.Study_likes{
-  font-size: 15px;
-  text-align: right;
-  margin-bottom: 2px;
-}
+// .Study_Card {
+//   background-color: white;
+//   border-radius: 6px;
+//   padding: 10px;
+//   display: flex;
+//   align-items: center;
+//   border: 1px solid grey;
+//   box-shadow: 5px 5px 10px rgb(189, 189, 189);
+//   margin : 23px;
+// }
+// .Study_Image {
+//   width: 80px;
+//   height: 80px;
+//   border-radius: 6px;
+//   margin-right : 20px;
+//   color : grey;
+// }
+// .Study_bullet{
+//   color : blue;
+//   font-size:12px;
+//   font-weight: 800;
+// }
+// .Study_title {
+//   width: 352px;
+//   font-weight: 800;
+//   font-family: "Geomanist";
+//   font-size: 20px;
+//   line-height: normal;
+//   color: black;
+//   margin-bottom: 6px;
+// }
+// .Study_personnel {
+//   max-width: 352px;
+//   @include nunito-14-regular;
+//   color: blue;
+//   margin-bottom: 3px;
+// }
+// .Study_authorName {
+//   @include nunito-14-regular;
+//   color: $text-grey;
+// }
