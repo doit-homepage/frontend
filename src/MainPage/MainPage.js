@@ -85,7 +85,7 @@ class MainPage extends Component {
                   </object>
                   <div id="MainPage_header">{data.header}</div>
                   <div id="MainPage_title">{data.title}</div>
-                  <div id="MainPage_like1">좋아요: 5</div>
+                  <div id="MainPage_like1">좋아요: {data.like}</div>
                   <div id="MainPage_writer1">{data.writer}</div>
                   <div id="MainPage_date1">{data.date}</div>
                 </div>
@@ -107,7 +107,7 @@ class MainPage extends Component {
                   <div id="MainPage_header">{data.header}</div>
                   <div id="MainPage_title">{data.title}</div>
                   <div id="MainPage_like1"> 모집인원: {data.student_num}</div>
-                  <div id="MainPage_writer1">작성자</div>
+                  <div id="MainPage_writer1">{data.teacher}</div>
                   <div id="MainPage_date1">{data.date}</div>
                 </div>
               )
