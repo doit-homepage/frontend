@@ -14,24 +14,37 @@ class NoticeResgistration extends Component {
               <div className="NoticeRegistration_content">
                 <div className="NoticeRegistration_front">
                     게시번호
+                    <span style={{color:'#3689CF'}} className="NoticeRegistration_span">23</span>
                 </div>
                 <div className="NoticeRegistration_front">
                     글머리
+                    <span className="NoticeRegistration_span"><input></input></span>
                 </div>
                 <div className="NoticeRegistration_front">
                     제목
+                    <span className="NoticeRegistration_span"><input style={{position: 'fixed', width: '20%'}}></input></span>
                 </div>
                 <div className="NoticeRegistration_front">
                     작성자
+                    <span className="NoticeRegistration_span">23</span>
                 </div>
                 <div className="NoticeRegistration_front">
                     작성일
+                    <span className="NoticeRegistration_span">23</span>
                 </div>
                 <div className="NoticeRegistration_front">
                     본문
+                    <div>
+                        <input className="NoticeRegistration_input"></input>
+                    </div>
                 </div>
-                <div className="NoticeRegistration_front">
+                <div className="NoticeRegistration_file">
                     첨부파일
+                    <input className="NoticeRegistration_fileInput"></input>
+                    <button className="NoticeRegistration_filePush">가져오기</button>
+                </div>
+                <div>
+                    <button className="NoticeRegistrtaion_submit">등록</button>
                 </div>
               </div>
           </div>
