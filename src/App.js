@@ -9,7 +9,11 @@ import StudyDetail from './StudyDetail/StudyDetail.js'
 import Login from './Login/Login.js'
 import Signup from './Signup/Signup.js'
 import NoticeDetail from './NoticeDetail/NoticeDetail'
+<<<<<<< HEAD
 import Video from './Video/Video'
+=======
+import NoticeResgistration from './NoticeRegistration/NoticeRegistration';
+>>>>>>> 66432cf52b83fa59f63c01831e18112d8ca477aa
 
 function App(props) {
   const { getToken, setToken } = props
@@ -27,6 +31,7 @@ function App(props) {
           <Route exact path='/Login'
             render={() => <Login getToken={getToken} setToken={setToken}/>}
           />
+          <Route exact path='/NoticeList/NoticeRegistration' component={NoticeResgistration}/>
           <Route exact path='/Signup' component = {Signup}/>
           <Route exact path='/NoticeDetail' component = {NoticeDetail}/>
           <Route exact path='/Video' 
