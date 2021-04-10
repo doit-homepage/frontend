@@ -12,9 +12,9 @@ function NoticeList() {
         <li>
           <div className={styles.Notice_Card}>
             <img
-              alt="articleImage"
+              //alt="articleImage"
               className={styles.Notice_Image}
-              src="#"
+              //src="#"
             />
             <div className={styles.Notice_content}>
               <p className={styles.Notice_bullet}>[글머리]</p>
@@ -28,9 +28,9 @@ function NoticeList() {
         <li>
         <div className={styles.Notice_Card}>
             <img
-              alt="articleImage"
+              //alt="articleImage"
               className={styles.Notice_Image}
-              src="#"
+              //src="#"
             />
             <div className={styles.Notice_content}>
               <p className={styles.Notice_bullet}>[글머리]</p>
@@ -44,9 +44,9 @@ function NoticeList() {
         <li>
         <div className={styles.Notice_Card}>
             <img
-              alt="articleImage"
+              //alt="articleImage"
               className={styles.Notice_Image}
-              src="#"
+              //src="#"
             />
             <div className={styles.Notice_content}>
               <p className={styles.Notice_bullet}>[글머리]</p>
@@ -60,9 +60,9 @@ function NoticeList() {
         <li>
         <div className={styles.Notice_Card}>
             <img
-              alt="articleImage"
+              //alt="articleImage"
               className={styles.Notice_Image}
-              src="#"
+              //src="#"
             />
             <div className={styles.Notice_content}>
               <p className={styles.Notice_bullet}>[글머리]</p>
@@ -76,9 +76,9 @@ function NoticeList() {
         <li>
         <div className={styles.Notice_Card}>
             <img
-              alt="articleImage"
+              //alt="articleImage"
               className={styles.Notice_Image}
-              src="#"
+              //src="#"
             />
             <div className={styles.Notice_content}>
               <p className={styles.Notice_bullet}>[글머리]</p>
@@ -92,9 +92,9 @@ function NoticeList() {
         <li>
         <div className={styles.Notice_Card}>
             <img
-              alt="articleImage"
+              //alt="articleImage"
               className={styles.Notice_Image}
-              src="#"
+              //src="#"
             />
             <div className={styles.Notice_content}>
               <p className={styles.Notice_bullet}>[글머리]</p>
