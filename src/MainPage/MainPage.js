@@ -12,7 +12,7 @@ class MainPage extends Component {
   async getInfo() {
     await axios.get('/api/main', {}).then((res) => {
       this.setState({ info_list: res.data.info_list })
-      this.setState({study_list: res.data.study_list})
+   
       console.log(res.data.info_list);
     })
     
