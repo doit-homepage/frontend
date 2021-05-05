@@ -44,7 +44,6 @@
     
 }
 .NoticeRegistration_filePush{
-    margin-right: 2%;
     width: 10%;
     padding: 0%;
     box-shadow: 0;
@@ -62,7 +61,7 @@
     background-color:#3689CF;
     border: 0;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     width: 13%;
     height: 5%;
     margin-left: 87%;
