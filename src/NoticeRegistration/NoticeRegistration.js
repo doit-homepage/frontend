@@ -13,10 +13,14 @@ const NoticeRegistration = () => {
         writer:'admin'
     }
     var submit_notice = (event) => {
+        state.title=document.getElementById('NoticeRegistration_title').value;
+        state.header=document.getElementById('NoticeRegistration_header').value;
+        state.content=document.getElementById('NoticeRegistration_content').value;
         axios.post('/api/info', state).then((res) => {
             console.log(res)
             if (res.data.success == true) {
                 window.location.href = '/NoticeList'
+                alert("등록 완료");
             } else {
                 alert(res)
             }
@@ -35,11 +39,11 @@ const NoticeRegistration = () => {
             </div>
             <div className="NoticeRegistration_front">
                 글머리
-                <span className="NoticeRegistration_span"><input type="text"></input></span>
+                <span className="NoticeRegistration_span"><input id="NoticeRegistration_header"></input></span>
             </div>
             <div className="NoticeRegistration_front">
                 제목
-                <span className="NoticeRegistration_span"><input type="text" style={{position: 'fixed', width: '20%'}}></input></span>
+                <span className="NoticeRegistration_span"><input id="NoticeRegistration_title" style={{position: 'fixed', width: '20%'}}></input></span>
             </div>
             <div className="NoticeRegistration_front">
                 작성자
@@ -52,7 +56,7 @@ const NoticeRegistration = () => {
             <div className="NoticeRegistration_front">
                 본문
                 <div>
-                    <input type="text" className="NoticeRegistration_input"></input>
+                    <input id="NoticeRegistration_content" className="NoticeRegistration_input"></input>
                 </div>
             </div>
             <div className="NoticeRegistration_file">
