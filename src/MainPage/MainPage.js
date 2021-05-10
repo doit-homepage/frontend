@@ -12,10 +12,7 @@ class MainPage extends Component {
   async getInfo() {
     await axios.get('/api/main', {}).then((res) => {
       this.setState({ info_list: res.data.info_list })
-   
-      console.log(res.data.info_list);
     })
-    
   }
   componentDidMount() {
     this.getInfo()
@@ -52,11 +49,6 @@ class MainPage extends Component {
     function endTime() {
       clearInterval(timer1);
       clearInterval(timer2);
-    }
-    function test() {
-      axios.post('/api/asdfs', {}).then((res) => {
-        console.log(res)
-      })
     }
 
     return (
