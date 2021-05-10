@@ -3,6 +3,11 @@ import TopBar from '../TopBar/TopBar.js';
 import styles from './NoticeList.scss';
 
 function NoticeList() {
+  var getData = function(){
+    axios.get('/list/:1').then(function(res){
+    console.log(res);
+    });
+  }
   return (
     <div className={styles.NoticeList}>
       <TopBar/>
