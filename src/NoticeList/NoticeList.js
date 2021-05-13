@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import TopBar from '../TopBar/TopBar.js';
 import styles from './NoticeList.scss';
+import axios from 'axios';
 
 function NoticeList() {
   var getData = function(){
