@@ -30,8 +30,12 @@ function App(props) {
           <Route exact path='/Login'
             render={() => <Login getToken={getToken} setToken={setToken}/>}
           />
-          <Route exact path='/NoticeList/NoticeRegistration' component={NoticeRegistration}/>
-          <Route exact path='/StudyList/StudyRegistration' component={StudyRegistration}/>
+          <Route exact path='/NoticeList/NoticeRegistration' 
+            render={() => <NoticeRegistration getToken={getToken} setToken={setToken}/>}
+          />
+          <Route exact path='/StudyList/StudyRegistration' 
+            render={() => <StudyRegistration getToken={getToken} setToken={setToken}/>}
+          />
           <Route exact path='/Signup' component = {Signup}/>
           <Route exact path='/NoticeDetail' component = {NoticeDetail}/>
           <Route exact path='/Video' 
