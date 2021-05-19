@@ -20,25 +20,25 @@ class NoticeList extends Component {
 
     return (
       
-      <div className={styles.NoticeList}>
+      <div className={'styles.NoticeList'}>
         <TopBar/>
-        <div className={styles.NoticeTitle}>공지사항</div>
-        <hr width = "1020" className = {styles.NoticeHR}></hr>
+        <div className={'styles.NoticeTitle'}>공지사항</div>
+        <hr width = "1020" className = {'styles.NoticeHR'}></hr>
         <ul>
           {dataList.map(data => {
             <li>
-            <div className={styles.Notice_Card}>
+            <div className={'styles.Notice_Card'}>
               <img
                 //alt="articleImage"
-                className={styles.Notice_Image}
+                className={'styles.Notice_Image'}
                 //src="#"
               />
-              <div className={styles.Notice_content}>
-                <p className={styles.Notice_bullet}>[{data.header}]</p>
-                <p className={styles.Notice_title}>{data.title}</p>
-                <p className={styles.Notice_authorName}>{data.writer}</p>
-                <p className={styles.Notice_date}>{data.date}</p>
-                <p className={styles.Notice_likes}>❤ {data.like}</p>
+              <div className={'styles.Notice_content'}>
+                <p className={'styles.Notice_bullet'}>[{data.header}]</p>
+                <p className={'styles.Notice_title'}>{data.title}</p>
+                <p className={'styles.Notice_authorName'}>{data.writer}</p>
+                <p className={'styles.Notice_date'}>{data.date}</p>
+                <p className={'styles.Notice_likes'}>❤ {data.like}</p>
               </div>
             </div>
           </li>  
