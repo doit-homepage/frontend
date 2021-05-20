@@ -2,45 +2,36 @@ import React, { Component } from "react";
 import TopBar from "../TopBar/TopBar.js";
 import "./NoticeDetail.css";
 import axios from "axios";
+import { render } from "@testing-library/react";
 
-function NoticeDetail() {
-  const axios = require("axios");
-  axios
-    .get("/:id")
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(response);
-    });
+class NoticeDetail extends React.Component {
+  componentWillMount() {
+    NoticeData = (event) => {
+      axios.get("/api/info/:id").then((res) => {
+        conssole.log(res.info.id);
+      });
+    };
 
-  axios
-    .post("/like", {
-      user_id: "userid",
-      notice_id: "noticeid",
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-  function test() {
-    axios.post("/api/info", {}).then((res) => {
-      console.log(res);
-    });
+    NoticeLike = (event) => {
+      axios
+        .post("/api/info/like", { user_id: "userid", notice_id: "noticeid" })
+        .then(function () {
+          console.log("좋아요 등록");
+        })
+        .catch(function (error) {
+          console.log("좋아요 등록 실패");
+        });
+    };
   }
-  test();
-  return (
+  render() {
     <div className="NoticeDetail">
       <div className="NoticeDetail_text">공지사항</div>
       <hr width="1020"></hr>
       <div className="NoticeDetailBox_top">
         <p className="NoticeDetail_notice">[글머리] 공지사항입니다 </p>
-        <p className="NoticeDetail_Like">12 ❤️</p>
+        <p className="NoticeDetail_Like">12</p>
+        <button onClick={NoticeLike()}>❤️</button>
       </div>
-
       <div className="NoticeDetail_writerinfo">
         정성원 &nbsp; 2020-03-07 &nbsp; 조회수210
       </div>
@@ -61,7 +52,7 @@ function NoticeDetail() {
       <hr width="1020"></hr>
 
       <button className="NoticeDetail_List">목록</button>
-    </div>
-  );
+    </div>;
+  }
 }
 export default NoticeDetail;
