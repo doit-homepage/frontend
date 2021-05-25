@@ -12,11 +12,14 @@ class MainPage extends Component {
   async getInfo() {
     await axios.get('/api/main', {}).then((res) => {
       this.setState({ info_list: res.data.info_list })
+      this.setState({study_list: res.data.study_list})
+      
     })
   }
-  componentDidMount() {
+  componentDidMount(){
     this.getInfo()
   }
+  
   render() {
     var n = 1; // clearTimeout() 함수를 이용하여 Timeout 을 취소하기위해 사용됨
     var ObjectArray = new Array();
