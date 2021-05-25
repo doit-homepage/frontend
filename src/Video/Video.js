@@ -51,16 +51,11 @@ function Video() {
     }
   
     return (<>
-      <div style={{ width: '100vw', height: '100vh', padding: '3em' }}>
+      <div style={{ width: '50%', height: '50%', padding: '3em' }}>
         <video ref={videoRef} autoPlay style={Styles.Video} />
-        <Button color="warning" onClick={() => startOrStop()}>{playing ? 'Stop' : 'Start'} </Button>
+        <button onClick={() => startOrStop()}>{playing ? 'Stop' : 'Start'} </button>
       </div >
       <hr />
-      <Nav pills>
-        <NavItem>
-          <NavLink href="https://rubenchoi.tistory.com/20" active target='_blank'>[Tutorial] React 웹캠 - 2. getUserMedia</NavLink>
-        </NavItem>
-      </Nav>
     </>);
 }
 

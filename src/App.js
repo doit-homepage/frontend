@@ -11,7 +11,6 @@ import Signup from './Signup/Signup.js'
 import StudyRegistration from './StduyRegistration/StudyRegistration';
 import NoticeDetail from './NoticeDetail/NoticeDetail'
 import Video from './Video/Video'
-import NoticeResgistration from './NoticeRegistration/NoticeRegistration';
 import NoticeRegistration from './NoticeRegistration/NoticeRegistration';
 
 function App(props) {
