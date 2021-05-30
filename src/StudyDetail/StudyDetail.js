@@ -3,12 +3,13 @@ import TopBar from "../TopBar/TopBar.js";
 import styles from "./StudyDetail.css";
 
 class StudyDetail extends React.Component {
+  StudyData = (event) => {
+    axios.get("/api/study/:id").then((res) => {
+      console.log(res.study.id);
+    });
+  };
   componentWillMount() {
-    NoticeData = (event) => {
-      axios.get("/api/study/:id").then((res) => {
-        conssole.log(res.study.id);
-      });
-    };
+    this.StudyData();
   }
   render() {
     return (
