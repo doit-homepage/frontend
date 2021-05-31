@@ -5,26 +5,25 @@ import axios from 'axios';
 import { render } from '@testing-library/react';
 
 class NoticeList extends Component {
-  state = {dataList:[]};
 
-  getData(){
-    axios.get('/list/:1').then(function(res){
-    console.log(res);
+  state = {
+    dataList: []
+  }
+  async getData(){
+    await axios.get('/api/list/1').then((res) => {
+      console.log(res);
+      this.setState({dataList: res.data.info_list})
+      console.log("성공했습니다!!");
     });
   }
-  componentWillMount(){
+  componentDidMount(){
     this.getData();
   }
-  // constructor(props){ //근데 글래스 필드 문법 때문에 굳이 안써도 되는거 아닌가?
-  //   super(props);
-  //   this.state = {dataList:[]};
-  // }
-  // componentDidMount(){
-  //   this.getData();
-  // }
+
   render(){
     const {dataList} = this.state;
     const setNoticeID = this.props.setNoticeID
+    console.log(dataList)
     return (
       
       <div all>
@@ -33,7 +32,8 @@ class NoticeList extends Component {
         <div className={"NoticeTitle"}>공지사항</div>
         <hr width = "1020" className = {"NoticeHR"}></hr>
         <ul>
-          {dataList.map(data => {
+          { this.state.dataList.map((data) => {
+            return (
             <li>
             <div className={"Notice_Card"}>
               <img
@@ -42,111 +42,15 @@ class NoticeList extends Component {
                 //src="#"
               />
               <div className={"Notice_content"}>
-                <p className={"Notice_bullet"}>[{setNoticeID.data.header}]</p>
-                <p className={"Notice_title"}>{setNoticeID.data.title}</p>
-                <p className={"Notice_authorName"}>{setNoticeID.data.writer}</p>
-                <p className={"Notice_date"}>{setNoticeID.data.date}</p>
-                <p className={"Notice_likes"}>❤ {setNoticeID.data.like}</p>
+                <p className={"Notice_bullet"}>[{data.header}]</p>
+                <p className={"Notice_title"}>{data.title}</p>
+                <p className={"Notice_authorName"}>{data.writer}</p>
+                <p className={"Notice_date"}>{data.date}</p>
+                <p className={"Notice_likes"}>❤ {data.like}</p>
               </div>
             </div>
           </li>  
-          })}
-          <li>
-            <div className={"Notice_Card"}>
-              <img
-                //alt="articleImage"
-                className={"Notice_Image"}
-                //src="#"
-              />
-              <div className={"Notice_content"}>
-                <p className={"Notice_bullet"}>[글머리]</p>
-                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
-                <p className={"Notice_authorName"}>정성원</p>
-                <p className={"Notice_date"}>2020-03-07</p>
-                <p className={"Notice_likes"}>❤ 13</p>
-              </div>
-            </div>
-          </li>
-          <li>
-          <div className={"Notice_Card"}>
-              <img
-                //alt="articleImage"
-                className={"Notice_Image"}
-                //src="#"
-              />
-              <div className={"Notice_content"}>
-                <p className={"Notice_bullet"}>[글머리]</p>
-                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
-                <p className={"Notice_authorName"}>정성원</p>
-                <p className={"Notice_date"}>2020-03-07</p>
-                <p className={"Notice_likes"}>❤ 13</p>
-              </div>
-            </div>
-          </li>
-          <li>
-          <div className={"Notice_Card"}>
-              <img
-                //alt="articleImage"
-                className={"Notice_Image"}
-                //src="#"
-              />
-              <div className={"Notice_content"}>
-                <p className={"Notice_bullet"}>[글머리]</p>
-                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
-                <p className={"Notice_authorName"}>정성원</p>
-                <p className={"Notice_date"}>2020-03-07</p>
-                <p className={"Notice_likes"}>❤ 13</p>
-              </div>
-            </div>
-          </li>
-          <li>
-          <div className={"Notice_Card"}>
-              <img
-                //alt="articleImage"
-                className={"Notice_Image"}
-                //src="#"
-              />
-              <div className={"Notice_content"}>
-                <p className={"Notice_bullet"}>[글머리]</p>
-                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
-                <p className={"Notice_authorName"}>정성원</p>
-                <p className={"Notice_date"}>2020-03-07</p>
-                <p className={"Notice_likes"}>❤ 13</p>
-              </div>
-            </div>
-          </li>
-          <li>
-          <div className={"Notice_Card"}>
-              <img
-                //alt="articleImage"
-                className={"Notice_Image"}
-                //src="#"
-              />
-              <div className={"Notice_content"}>
-                <p className={"Notice_bullet"}>[글머리]</p>
-                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
-                <p className={"Notice_authorName"}>정성원</p>
-                <p className={"Notice_date"}>2020-03-07</p>
-                <p className={"Notice_likes"}>❤ 13</p>
-              </div>
-            </div>
-          </li>
-          <li>
-          <div className={"Notice_Card"}>
-              <img
-                //alt="articleImage"
-                className={"Notice_Image"}
-                //src="#"
-              />
-              <div className={"Notice_content"}>
-                <p className={"Notice_bullet"}>[글머리]</p>
-                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
-                <p className={"Notice_authorName"}>정성원</p>
-                <p className={"Notice_date"}>2020-03-07</p>
-                <p className={"Notice_likes"}>❤ 13</p>
-              </div>
-            </div>
-          </li>
+          )})}
         </ul>
       </div>
       </div>
