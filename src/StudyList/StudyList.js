@@ -25,6 +25,7 @@ class StudyList extends Component {
         <div className={'styles.NoticeTitle'}>스터디/프로젝트 목록</div>
         <hr width = "1020" className = {'styles.StudyHR'}></hr>
         <ul>
+        {dataList.map(data => {
           <li>
             <div className={'styles.Study_Card'}>
               <img
@@ -40,8 +41,10 @@ class StudyList extends Component {
               </div>
             </div>
           </li>
+        })}
         <hr width="1500" className={'styles.NoticeHR'}></hr>
         </ul>
+        
       </div>
       <ul>
         <div className={'styles.NoticeTitle'}>스터디/프로젝트 목록</div>
@@ -62,6 +65,7 @@ class StudyList extends Component {
               </div>
           </div>
         </li>
+        
         <li>
         <div className={'styles.Study_Card'}>
             <img

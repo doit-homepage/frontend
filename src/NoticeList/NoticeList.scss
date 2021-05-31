@@ -1,13 +1,24 @@
 
 @import "stylesheet.scss";
 
+ul{
+  list-style:none;
+  }
+
+.NoticeList{
+  margin-top : 10px;
+  position : absolute;
+  left:13%;
+}
+
 .NoticeTitle {
-  margin : 20px 40px 10px 40px;
+  margin : 20px 10px 10px 100px;
   font-size: 30px;
   font-weight: 900;
 }
 
 .NoticeHR{
+  margin-left : 65px;
   margin-bottom: 6px;
 }
 
@@ -21,14 +32,18 @@ li { float: left; width: calc(50%-30px);}
   align-items: center;
   border: 1px solid $grey;
   box-shadow: 5px 5px 10px rgb(189, 189, 189);
-  margin : 23px;
+  margin-bottom: 23px;
+  margin-left: 25px;
+  margin-right: 10px;
 }
 .Notice_Image {
   width: 80px;
   height: 80px;
   border-radius: 6px;
+  margin-left: 20px;
   margin-right : 20px;
-  color : $grey;
+  background-color: $grey;
+  border-color: rgb(255, 255, 255);
 }
 .Notice_bullet{
   color : blue;
@@ -48,7 +63,7 @@ li { float: left; width: calc(50%-30px);}
   max-width: 352px;
   @include nunito-14-regular;
   color: $text-grey;
-  margin-bottom: 3px;
+  margin-bottom: 1px;
 }
 .Notice_authorName {
   @include nunito-14-regular;
@@ -57,5 +72,6 @@ li { float: left; width: calc(50%-30px);}
 .Notice_likes{
   font-size: 15px;
   text-align: right;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
+  margin-right:20px;
 }

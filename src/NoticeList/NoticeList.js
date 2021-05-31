@@ -12,134 +12,143 @@ class NoticeList extends Component {
     console.log(res);
     });
   }
-  componentDidMount(){
+  componentWillMount(){
     this.getData();
   }
+  // constructor(props){ //근데 글래스 필드 문법 때문에 굳이 안써도 되는거 아닌가?
+  //   super(props);
+  //   this.state = {dataList:[]};
+  // }
+  // componentDidMount(){
+  //   this.getData();
+  // }
   render(){
     const {dataList} = this.state;
-
+    const setNoticeID = this.props.setNoticeID
     return (
       
-      <div className={'styles.NoticeList'}>
+      <div all>
         <TopBar/>
-        <div className={'styles.NoticeTitle'}>공지사항</div>
-        <hr width = "1020" className = {'styles.NoticeHR'}></hr>
+        <div className={"NoticeList"}>
+        <div className={"NoticeTitle"}>공지사항</div>
+        <hr width = "1020" className = {"NoticeHR"}></hr>
         <ul>
           {dataList.map(data => {
             <li>
-            <div className={'styles.Notice_Card'}>
+            <div className={"Notice_Card"}>
               <img
                 //alt="articleImage"
-                className={'styles.Notice_Image'}
+                className={"Notice_Image"}
                 //src="#"
               />
-              <div className={'styles.Notice_content'}>
-                <p className={'styles.Notice_bullet'}>[{data.header}]</p>
-                <p className={'styles.Notice_title'}>{data.title}</p>
-                <p className={'styles.Notice_authorName'}>{data.writer}</p>
-                <p className={'styles.Notice_date'}>{data.date}</p>
-                <p className={'styles.Notice_likes'}>❤ {data.like}</p>
+              <div className={"Notice_content"}>
+                <p className={"Notice_bullet"}>[{setNoticeID.data.header}]</p>
+                <p className={"Notice_title"}>{setNoticeID.data.title}</p>
+                <p className={"Notice_authorName"}>{setNoticeID.data.writer}</p>
+                <p className={"Notice_date"}>{setNoticeID.data.date}</p>
+                <p className={"Notice_likes"}>❤ {setNoticeID.data.like}</p>
               </div>
             </div>
           </li>  
           })}
           <li>
-            <div className={styles.Notice_Card}>
+            <div className={"Notice_Card"}>
               <img
                 //alt="articleImage"
-                className={styles.Notice_Image}
+                className={"Notice_Image"}
                 //src="#"
               />
-              <div className={styles.Notice_content}>
-                <p className={styles.Notice_bullet}>[글머리]</p>
-                <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-                <p className={styles.Notice_authorName}>정성원</p>
-                <p className={styles.Notice_date}>2020-03-07</p>
-                <p className={styles.Notice_likes}>❤ 13</p>
+              <div className={"Notice_content"}>
+                <p className={"Notice_bullet"}>[글머리]</p>
+                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
+                <p className={"Notice_authorName"}>정성원</p>
+                <p className={"Notice_date"}>2020-03-07</p>
+                <p className={"Notice_likes"}>❤ 13</p>
               </div>
             </div>
           </li>
           <li>
-          <div className={styles.Notice_Card}>
+          <div className={"Notice_Card"}>
               <img
                 //alt="articleImage"
-                className={styles.Notice_Image}
+                className={"Notice_Image"}
                 //src="#"
               />
-              <div className={styles.Notice_content}>
-                <p className={styles.Notice_bullet}>[글머리]</p>
-                <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-                <p className={styles.Notice_authorName}>정성원</p>
-                <p className={styles.Notice_date}>2020-03-07</p>
-                <p className={styles.Notice_likes}>❤ 13</p>
+              <div className={"Notice_content"}>
+                <p className={"Notice_bullet"}>[글머리]</p>
+                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
+                <p className={"Notice_authorName"}>정성원</p>
+                <p className={"Notice_date"}>2020-03-07</p>
+                <p className={"Notice_likes"}>❤ 13</p>
               </div>
             </div>
           </li>
           <li>
-          <div className={styles.Notice_Card}>
+          <div className={"Notice_Card"}>
               <img
                 //alt="articleImage"
-                className={styles.Notice_Image}
+                className={"Notice_Image"}
                 //src="#"
               />
-              <div className={styles.Notice_content}>
-                <p className={styles.Notice_bullet}>[글머리]</p>
-                <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-                <p className={styles.Notice_authorName}>정성원</p>
-                <p className={styles.Notice_date}>2020-03-07</p>
-                <p className={styles.Notice_likes}>❤ 13</p>
+              <div className={"Notice_content"}>
+                <p className={"Notice_bullet"}>[글머리]</p>
+                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
+                <p className={"Notice_authorName"}>정성원</p>
+                <p className={"Notice_date"}>2020-03-07</p>
+                <p className={"Notice_likes"}>❤ 13</p>
               </div>
             </div>
           </li>
           <li>
-          <div className={styles.Notice_Card}>
+          <div className={"Notice_Card"}>
               <img
                 //alt="articleImage"
-                className={styles.Notice_Image}
+                className={"Notice_Image"}
                 //src="#"
               />
-              <div className={styles.Notice_content}>
-                <p className={styles.Notice_bullet}>[글머리]</p>
-                <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-                <p className={styles.Notice_authorName}>정성원</p>
-                <p className={styles.Notice_date}>2020-03-07</p>
-                <p className={styles.Notice_likes}>❤ 13</p>
+              <div className={"Notice_content"}>
+                <p className={"Notice_bullet"}>[글머리]</p>
+                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
+                <p className={"Notice_authorName"}>정성원</p>
+                <p className={"Notice_date"}>2020-03-07</p>
+                <p className={"Notice_likes"}>❤ 13</p>
               </div>
             </div>
           </li>
           <li>
-          <div className={styles.Notice_Card}>
+          <div className={"Notice_Card"}>
               <img
                 //alt="articleImage"
-                className={styles.Notice_Image}
+                className={"Notice_Image"}
                 //src="#"
               />
-              <div className={styles.Notice_content}>
-                <p className={styles.Notice_bullet}>[글머리]</p>
-                <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-                <p className={styles.Notice_authorName}>정성원</p>
-                <p className={styles.Notice_date}>2020-03-07</p>
-                <p className={styles.Notice_likes}>❤ 13</p>
+              <div className={"Notice_content"}>
+                <p className={"Notice_bullet"}>[글머리]</p>
+                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
+                <p className={"Notice_authorName"}>정성원</p>
+                <p className={"Notice_date"}>2020-03-07</p>
+                <p className={"Notice_likes"}>❤ 13</p>
               </div>
             </div>
           </li>
           <li>
-          <div className={styles.Notice_Card}>
+          <div className={"Notice_Card"}>
               <img
                 //alt="articleImage"
-                className={styles.Notice_Image}
+                className={"Notice_Image"}
                 //src="#"
               />
-              <div className={styles.Notice_content}>
-                <p className={styles.Notice_bullet}>[글머리]</p>
-                <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-                <p className={styles.Notice_authorName}>정성원</p>
-                <p className={styles.Notice_date}>2020-03-07</p>
-                <p className={styles.Notice_likes}>❤ 13</p>
+              <div className={"Notice_content"}>
+                <p className={"Notice_bullet"}>[글머리]</p>
+                <p className={"Notice_title"}>Do-iT 공지사항 제목</p>
+                <p className={"Notice_authorName"}>정성원</p>
+                <p className={"Notice_date"}>2020-03-07</p>
+                <p className={"Notice_likes"}>❤ 13</p>
               </div>
             </div>
           </li>
         </ul>
+      </div>
       </div>
     );
   }

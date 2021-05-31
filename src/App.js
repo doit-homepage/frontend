@@ -12,6 +12,12 @@ import NoticeDetail from './NoticeDetail/NoticeDetail'
 
 function App(props) {
   const { getToken, setToken } = props
+  var state = {
+    NoticeID: 0
+  }
+  var setNoticeID = (id) => {
+    this.state.NoticeID = id
+  }
   return (
     <div className="App">
       <Router>
@@ -21,7 +27,9 @@ function App(props) {
         <div className = "App_body">
           <Route exact path='/' component = {MainPage}/>
           <Route exact path='/StudyList' component = {StudyList}/>
-          <Route exact path='/NoticeList' component = {NoticeList}/>
+          <Route exact path='/NoticeList' 
+            render={() => <NoticeList setNoticeID={setNoticeID}/>}
+          />
           <Route exact path='/StudyDetail' component = {StudyDetail}/>
           <Route exact path='/Login'
             render={() => <Login getToken={getToken} setToken={setToken}/>}
