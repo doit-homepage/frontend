@@ -29,6 +29,9 @@ li { float: left; width: calc(50%-30px);}
   border-radius: 6px;
   padding: 10px;
   display: flex;
+  flex-direction: row;
+  height : 130px;
+  width: 470px;
   align-items: center;
   border: 1px solid $grey;
   box-shadow: 5px 5px 10px rgb(189, 189, 189);
@@ -36,10 +39,13 @@ li { float: left; width: calc(50%-30px);}
   margin-left: 25px;
   margin-right: 10px;
 }
+.Notice_content{
+  height: 140px;
+}
 .Notice_Image {
   width: 80px;
   height: 80px;
-  border-radius: 6px;
+  border-radius: 8px;
   margin-left: 20px;
   margin-right : 20px;
   background-color: $grey;
@@ -49,6 +55,8 @@ li { float: left; width: calc(50%-30px);}
   color : blue;
   font-size:12px;
   font-weight: 800;
+  margin-top:20px;
+  margin-bottom: 0px;
 }
 .Notice_title {
   width: 352px;
@@ -57,10 +65,11 @@ li { float: left; width: calc(50%-30px);}
   font-size: 20px;
   line-height: normal;
   color: $text-black;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  margin-top: 1px;
 }
 .Notice_date {
-  max-width: 352px;
+  max-width: 168px;
   @include nunito-14-regular;
   color: $text-grey;
   margin-bottom: 1px;
@@ -68,10 +77,16 @@ li { float: left; width: calc(50%-30px);}
 .Notice_authorName {
   @include nunito-14-regular;
   color: $text-grey;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+.Notice_date{
+  margin-top:2px;
 }
 .Notice_likes{
   font-size: 15px;
-  text-align: right;
-  margin-bottom: 10px;
-  margin-right:20px;
+  //text-align: right;
+  margin-top:0px;
+  //margin-bottom: 3px;
+  margin-left:290px;
 }

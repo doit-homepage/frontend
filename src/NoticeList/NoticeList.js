@@ -46,7 +46,7 @@ class NoticeList extends Component {
                 <p className={"Notice_title"}>{data.title}</p>
                 <p className={"Notice_authorName"}>{data.writer}</p>
                 <p className={"Notice_date"}>{data.date}</p>
-                <p className={"Notice_likes"}>❤ {data.like}</p>
+                <p className={"Notice_likes"}>❤ 12{data.like}</p>
               </div>
             </div>
           </li>  
