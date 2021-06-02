@@ -15,6 +15,7 @@ import NoticeRegistration from './NoticeRegistration/NoticeRegistration';
 
 function App(props) {
   const { getToken, setToken } = props
+  console.log(getToken)
   return (
     <div className="App">
       <Router>
