@@ -1,62 +1,178 @@
-import { Link, Route, BrowserRouter as Router } from "react-router-dom"
-import axios from 'axios'
 import React from 'react'
-import socketio from 'socket.io-client'
+import io from 'socket.io-client'
+
+class Video extends React.Component {
+  componentDidMount() {
+    let localVideo = document.getElementById("localVideo");
+    let remoteVideo = document.getElementById("remoteVideo");
+    let isInitiator = false;
+    let isChannelReady = false;
+    let isStarted = false;
+    let localStream;
+    let remoteStream;
+    let pc;
 
 
-const getWebcam = (callback) => {
-    try {
-      const constraints = {
-        'video': true,
-        'audio': false
-      }
-      navigator.mediaDevices.getUserMedia(constraints)
-        .then(callback);
-    } catch (err) {
-      console.log(err);
-      return undefined;
+    let room = 'foo';
+
+    let socket = io.connect('http://localhost:3000');
+
+    if (room !== '') {
+      socket.emit('create', room);
+      console.log('Attempted to create or join Room', room);
     }
-  }
-  
-  const Styles = {
-    Video: { width: "100%", height: "100%", background: 'rgba(245, 240, 215, 0.5)' },
-    None: { display: 'none' },
-  }
-  
-function Video() {
-    const [playing, setPlaying] = React.useState(undefined);
 
-    const videoRef = React.useRef(null);
-  
-    React.useEffect(() => {
-      getWebcam((stream => {
-        setPlaying(true);
-        videoRef.current.srcObject = stream;
-      }));
-    }, []);
-  
-    const startOrStop = () => {
-      if (playing) {
-        const s = videoRef.current.srcObject;
-        s.getTracks().forEach((track) => {
-          track.stop();
+    socket.on('created', (room, id) => {
+      console.log('Created room' + room + 'socket ID : ' + id);
+      isInitiator = true;
+    })
+
+    socket.on('full', room => {
+      console.log('Room ' + room + 'is full');
+    });
+
+    socket.on('join', room => {
+      console.log('Another peer made a request to join room' + room);
+      console.log('This peer is the initiator of room' + room + '!');
+      isChannelReady = true;
+    })
+
+    socket.on('joined', room => {
+      console.log('joined : ' + room);
+      isChannelReady = true;
+    })
+    socket.on('log', array => {
+      console.log.apply(console, array);
+    });
+
+    socket.on('message', (message) => {
+      console.log('Client received message :', message);
+      if (message === 'got user media') {
+        maybeStart();
+      } else if (message.type === 'offer') {
+        if (!isInitiator && !isStarted) {
+          maybeStart();
+        }
+        pc.setRemoteDescription(new RTCSessionDescription(message));
+        doAnswer();
+      } else if (message.type === 'answer' && isStarted) {
+        pc.setRemoteDescription(new RTCSessionDescription(message));
+      } else if (message.type === 'candidate' && isStarted) {
+        const candidate = new RTCIceCandidate({
+          sdpMLineIndex: message.label,
+          candidate: message.candidate
+        });
+
+        pc.addIceCandidate(candidate);
+      }
+    })
+    function sendMessage(message) {
+      console.log('Client sending message: ', message);
+      socket.emit('message', message);
+    }
+
+    navigator.mediaDevices
+      .getUserMedia({
+        video: true,
+        audio: false,
+      })
+      .then(gotStream)
+      .catch((error) => console.error(error));
+
+    function gotStream(stream) {
+      console.log("Adding local stream");
+      localStream = stream;
+      localVideo.srcObject = stream;
+      sendMessage("got user media");
+      if (isInitiator) {
+        maybeStart();
+      }
+    }
+
+    function createPeerConnection() {
+      try {
+        pc = new RTCPeerConnection(null);
+        pc.onicecandidate = handleIceCandidate;
+        pc.onaddstream = handleRemoteStreamAdded;
+        console.log("Created RTCPeerConnection");
+      } catch (e) {
+        alert("connot create RTCPeerConnection object");
+        return;
+      }
+    }
+
+    function handleIceCandidate(event) {
+      console.log("iceCandidateEvent", event);
+      if (event.candidate) {
+        sendMessage({
+          type: "candidate",
+          label: event.candidate.sdpMLineIndex,
+          id: event.candidate.sdpMid,
+          candidate: event.candidate.candidate,
         });
       } else {
-        getWebcam((stream => {
-          setPlaying(true);
-          videoRef.current.srcObject = stream;
-        }));
+        console.log("end of candidates");
       }
-      setPlaying(!playing);
     }
-  
+
+    function handleCreateOfferError(event) {
+      console.log("createOffer() error: ", event);
+    }
+
+    function handleRemoteStreamAdded(event) {
+      console.log("remote stream added");
+      remoteStream = event.stream;
+      remoteVideo.srcObject = remoteStream;
+    }
+
+    function maybeStart() {
+      console.log(">>MaybeStart() : ", isStarted, localStream, isChannelReady);
+      if (!isStarted && typeof localStream !== "undefined" && isChannelReady) {
+        console.log(">>>>> creating peer connection");
+        createPeerConnection();
+        pc.addStream(localStream);
+        isStarted = true;
+        console.log("isInitiator : ", isInitiator);
+        if (isInitiator) {
+          doCall();
+        }
+      } else {
+        console.error('maybeStart not Started!');
+      }
+    }
+
+    function doCall() {
+      console.log("Sending offer to peer");
+      pc.createOffer(setLocalAndSendMessage, handleCreateOfferError);
+    }
+
+    function doAnswer() {
+      console.log("Sending answer to peer");
+      pc.createAnswer().then(
+        setLocalAndSendMessage,
+        onCreateSessionDescriptionError
+      );
+    }
+
+    function setLocalAndSendMessage(sessionDescription) {
+      pc.setLocalDescription(sessionDescription);
+      sendMessage(sessionDescription);
+    }
+
+    function onCreateSessionDescriptionError(error) {
+      console.error("Falied to create session Description", error);
+    }
+  }
+  render() {
     return (<>
       <div style={{ width: '50%', height: '50%', padding: '3em' }}>
-        <video ref={videoRef} autoPlay style={Styles.Video} />
-        <button onClick={() => startOrStop()}>{playing ? 'Stop' : 'Start'} </button>
+        <video id="localVideo" autoPlay width="480px"></video>
+        <video id="remoteVideo" width="480px" autoPlay></video>
       </div >
       <hr />
     </>);
+  }
+
 }
 
 export default Video;
