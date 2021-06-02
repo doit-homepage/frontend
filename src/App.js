@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useRef} from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css';
 import MainPage from './MainPage/MainPage.js';
@@ -10,6 +10,7 @@ import Login from './Login/Login.js'
 import Signup from './Signup/Signup.js'
 import StudyRegistration from './StduyRegistration/StudyRegistration';
 import NoticeDetail from './NoticeDetail/NoticeDetail'
+import Video from './Video/Video'
 import NoticeRegistration from './NoticeRegistration/NoticeRegistration';
 
 function App(props) {
@@ -50,6 +51,9 @@ function App(props) {
           />
           <Route exact path='/Signup' component = {Signup}/>
           <Route exact path='/NoticeDetail' component = {NoticeDetail}/>
+          <Route exact path='/Video' 
+            render={() => <Video/>}
+          />
         </div>
       </Router>
     </div>
