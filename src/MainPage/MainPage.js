@@ -9,11 +9,13 @@ class MainPage extends Component {
     info_list: [],
     study_list: []
   }
+  constructor(props){
+    super(props)
+  }
   async getInfo() {
     await axios.get('/api/main', {}).then((res) => {
       this.setState({ info_list: res.data.info_list })
       this.setState({study_list: res.data.study_list})
-      
     })
   }
   componentDidMount(){
@@ -49,11 +51,11 @@ class MainPage extends Component {
 
     timer2 = setInterval(changeBack, 7000);
 
+    
     function endTime() {
       clearInterval(timer1);
       clearInterval(timer2);
     }
-
     return (
       <div className="MainPage">
         <div className="MainPage_up">

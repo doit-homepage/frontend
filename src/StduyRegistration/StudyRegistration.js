@@ -3,7 +3,7 @@ import style from './StudyRegistration.css';
 import { Link, Route, BrowserRouter as Router } from "react-router-dom"
 import axios from 'axios';
 import { useState } from "react";
-import DatePicker from "react-datepicker";
+import ReactDatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -44,23 +44,28 @@ const StudyRegistration = (props) => {
         day="일";
     }
     let current=year+"/"+month+"/"+date+"("+day+")";
+    const [start_date, setStartDate] = useState(new Date());
+    const [end_date, setEndDate] = useState(new Date());
     var state={
         title:'',
         header:'',
         content:'',
-        date: current,
+        start_date: start_date,
+        end_date: end_date,
         student_num: ''
     }
-    const [startdate, setStartDate] = useState(new Date());
+    
     
     var submit_Study = (event) => {
         state.title=document.getElementById('StudyRegistration_title').value;
         state.header=document.getElementById('StudyRegistration_header').value;
         state.content=document.getElementById('StudyRegistration_content').value;
+        state.student_num=document.getElementById('StudyRegistration_sel1').value;
+        console.log(state);
         
         axios.post('/api/study', state, {
             headers: {
-                'x-access-token': token
+                'x-access-token': localStorage['x-access-token']
             }
         }).then((res) => {
             console.log(res)
@@ -87,26 +92,45 @@ const StudyRegistration = (props) => {
             
             <div className="StudyRegistration_front">
                 제목
-                <span className="StudyRegistration_span"><input id="StudyRegistration_title" style={{position: 'fixed', width: '20%'}}></input></span>
+                <span className="StudyRegistration_span"><input id="StudyRegistration_title" style={{width: '150%'}}></input></span>
             </div>
             <div className="StudyRegistration_front">
                 모집 시작
-                <DatePicker className="StudyRegistration_date" selected={startdate} onChange={date => setStartDate(date)} showTimeSelect
-                dateFormat="Pp"/>
+                <ReactDatePicker className="StudyRegistration_startdate" selected={start_date} onChange={date => setStartDate(date)} showTimeSelect
+                dateFormat="Pp" name = "start_date"/>
             </div>
             <div className="StudyRegistration_front">
                 모집 종료
-                <DatePicker className="StudyRegistration_date" selected={startdate} onChange={date => setStartDate(date)} showTimeSelect
-                dateFormat="Pp"/>
+                <ReactDatePicker className="StudyRegistration_enddate" selected={end_date} onChange={date => setEndDate(date)} showTimeSelect
+                dateFormat="Pp" name="end_date"/>
             </div>
 
     
             <div className="StudyRegistration_front">
                 인원
                 <span className="StudyRegistration_span">
-                    <select id= "sel1" >
-                     
-                    
+                    <select id= "StudyRegistration_sel1" >
+                        <option>선택</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
                     </select>
                 </span>
             </div>

@@ -4,8 +4,8 @@ import styles from './TopBar.css';
 import MainPage from '../MainPage/MainPage.js';
 import { Link, Route, BrowserRouter as Router } from "react-router-dom"
 
-export default function TopBar() {
-  
+export default function TopBar(props) {
+    
     return (
 
         <div className="top-bar"> 

@@ -49,7 +49,7 @@ const NoticeRegistration = (props) => {
         state.content=document.getElementById('NoticeRegistration_content').value;
         axios.post('/api/info', state, {
             headers: {
-                'x-access-token': token
+                'x-access-token': localStorage['x-access-token']
             }
         }).then((res) => {
             
