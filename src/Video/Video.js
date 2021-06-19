@@ -3,6 +3,7 @@ import io from 'socket.io-client'
 
 class Video extends React.Component {
   componentDidMount() {
+    var name = '정성원'
     let localVideo = document.getElementById("localVideo");
     let remoteVideo = document.getElementById("remoteVideo");
     let isInitiator = false;
