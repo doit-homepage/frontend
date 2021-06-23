@@ -22,7 +22,6 @@ class NoticeList extends Component {
 
   render(){
     const {dataList} = this.state;
-    const setNoticeID = this.props.setNoticeID
     console.log(dataList)
     return (
       
