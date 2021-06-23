@@ -1,39 +1,73 @@
 
 @import "stylesheet.scss";
 
+ul{
+  list-style:none;
+}
+
+.ReservedLsit{
+  margin-top : 10px;
+  position : absolute;
+  left:13%;
+  background-color: $white;
+}
+
+.recruit{
+  margin-top : 320px;
+  position : absolute;
+  left:13%;
+}
 .StudyTitle {
   margin : 20px 40px 10px 40px;
   font-size: 30px;
   font-weight: 900;
 }
 
-.StudyHR{
+.TitleHR{
+  margin-left: 50px;
+  margin-bottom: 6px;
+}
+.TitleHR2{
+  margin-top: 215px;
+  margin-left: 50px;
   margin-bottom: 6px;
 }
 
 li { float: left; width: calc(50%-30px);}
 
 .Study_Card {
-  background-color: white;
+  background-color: $white;
   border-radius: 6px;
   padding: 10px;
   display: flex;
+  flex-direction: row;
+  height : 130px;
+  width: 470px;
   align-items: center;
-  border: 1px solid grey;
+  border: 1px solid $grey;
   box-shadow: 5px 5px 10px rgb(189, 189, 189);
-  margin : 23px;
+  margin-bottom: 23px;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+.Study_content{
+  height : 140px;
 }
 .Study_Image {
   width: 80px;
   height: 80px;
-  border-radius: 6px;
+  border-radius: 8px;
+  margin-left: 20px;
   margin-right : 20px;
-  color : grey;
+  background-color: $grey;
+  border-color: rgb(255, 255, 255);
 }
 .Study_bullet{
   color : blue;
   font-size:12px;
   font-weight: 800;
+  margin-top:20px;
+  margin-bottom: 0px;
 }
 .Study_title {
   width: 352px;
@@ -41,8 +75,9 @@ li { float: left; width: calc(50%-30px);}
   font-family: "Geomanist";
   font-size: 20px;
   line-height: normal;
-  color: black;
-  margin-bottom: 6px;
+  color: $text-black;
+  margin-bottom: 10px;
+  margin-top: 1px;
 }
 .Study_personnel {
   max-width: 352px;
@@ -53,8 +88,6 @@ li { float: left; width: calc(50%-30px);}
 .Study_authorName {
   @include nunito-14-regular;
   color: $text-grey;
-}
-
-.ReservedLsit{
-    position : fixed;
+  margin-top: 2px;
+  margin-bottom: 3px;
 }
