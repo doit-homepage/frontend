@@ -27,6 +27,7 @@ const Signup = () => {
     var submit_action = (event) => {
         if (state['pw'] == state['pw_check'] && state['num_check'] == true && state['id_check'] == true) {
             axios.post('/api/user', state).then((res) => {
+                console.log(state)
                 if (res.data.success == true) {
                     window.location.href = '/login'
                 } else {
