@@ -15,27 +15,24 @@ import NoticeRegistration from './NoticeRegistration/NoticeRegistration';
 
 function App(props) {
   const { getToken, setToken } = props
-  var state = {
-    timer1 : '',
-    timer2 : ''
+  var timer1 = null
+  var setTimer = (timer) => {
+    if(timer !== null && window.location.pathname!='/'){
+      timer();
+    }
   }
-  var setTimer = (timer1, timer2) => {
-    state.timer1 = timer1;
-    state.timer2 = timer2;
-  }
-  var getTimer = () => {
-    clearInterval(state.timer1)
-    clearInterval(state.timer2)
-  }
+  console.log(getToken)
+  
+  
   return (
     <div className="App">
       <Router>
         <div className = "App_header">
-          <TopBar getTimer = {getTimer()}/>
+        <TopBar/>
         </div>
         <div className = "App_body">
-          <Route exact path='/' 
-            render={() => <MainPage setTimer={(timer1, timer2) => setTimer(timer1,timer2)} getTimer = {getTimer()}/>}
+        
+          <Route exact path='/' component={MainPage}
           />
           <Route exact path='/StudyList' component = {StudyList}/>
           <Route exact path='/NoticeList' component = {NoticeList}/>
