@@ -1,113 +1,60 @@
 import React, {Component} from 'react';
 import TopBar from '../TopBar/TopBar.js';
 import styles from './NoticeList.scss';
+import axios from 'axios';
+import { render } from '@testing-library/react';
 
-function NoticeList() {
-  return (
-    <div className={styles.NoticeList}>
-      <TopBar/>
-      <div className={styles.NoticeTitle}>공지사항</div>
-      <hr width = "1020" className = {styles.NoticeHR}></hr>
-      <ul>
-        <li>
-          <div className={styles.Notice_Card}>
-            <img
-              alt="articleImage"
-              className={styles.Notice_Image}
-              src="#"
-            />
-            <div className={styles.Notice_content}>
-              <p className={styles.Notice_bullet}>[글머리]</p>
-              <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-              <p className={styles.Notice_authorName}>정성원</p>
-              <p className={styles.Notice_date}>2020-03-07</p>
-              <p className={styles.Notice_likes}>❤ 13</p>
+class NoticeList extends Component {
+
+  state = {
+    dataList: []
+  }
+  async getData(){
+    await axios.get('/api/list/1').then((res) => {
+      console.log(res);
+      this.setState({dataList: res.data.info_list})
+      console.log("성공했습니다!!");
+    });
+  }
+  componentDidMount(){
+    this.getData();
+  }
+
+  render(){
+    const {dataList} = this.state;
+    console.log(dataList)
+    return (
+      
+      <div all>
+        <TopBar/>
+        <div className={"NoticeList"}>
+        <div className={"NoticeTitle"}>공지사항</div>
+        <hr width = "1020" className = {"NoticeHR"}></hr>
+        <ul>
+          { this.state.dataList.map((data) => {
+            return (
+            <li>
+            <div className={"Notice_Card"}>
+              <img
+                //alt="articleImage"
+                className={"Notice_Image"}
+                //src="#"
+              />
+              <div className={"Notice_content"}>
+                <p className={"Notice_bullet"}>[{data.header}]</p>
+                <p className={"Notice_title"}>{data.title}</p>
+                <p className={"Notice_authorName"}>{data.writer}</p>
+                <p className={"Notice_date"}>{data.date}</p>
+                <p className={"Notice_likes"}>❤ 12{data.like}</p>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-        <div className={styles.Notice_Card}>
-            <img
-              alt="articleImage"
-              className={styles.Notice_Image}
-              src="#"
-            />
-            <div className={styles.Notice_content}>
-              <p className={styles.Notice_bullet}>[글머리]</p>
-              <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-              <p className={styles.Notice_authorName}>정성원</p>
-              <p className={styles.Notice_date}>2020-03-07</p>
-              <p className={styles.Notice_likes}>❤ 13</p>
-            </div>
-          </div>
-        </li>
-        <li>
-        <div className={styles.Notice_Card}>
-            <img
-              alt="articleImage"
-              className={styles.Notice_Image}
-              src="#"
-            />
-            <div className={styles.Notice_content}>
-              <p className={styles.Notice_bullet}>[글머리]</p>
-              <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-              <p className={styles.Notice_authorName}>정성원</p>
-              <p className={styles.Notice_date}>2020-03-07</p>
-              <p className={styles.Notice_likes}>❤ 13</p>
-            </div>
-          </div>
-        </li>
-        <li>
-        <div className={styles.Notice_Card}>
-            <img
-              alt="articleImage"
-              className={styles.Notice_Image}
-              src="#"
-            />
-            <div className={styles.Notice_content}>
-              <p className={styles.Notice_bullet}>[글머리]</p>
-              <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-              <p className={styles.Notice_authorName}>정성원</p>
-              <p className={styles.Notice_date}>2020-03-07</p>
-              <p className={styles.Notice_likes}>❤ 13</p>
-            </div>
-          </div>
-        </li>
-        <li>
-        <div className={styles.Notice_Card}>
-            <img
-              alt="articleImage"
-              className={styles.Notice_Image}
-              src="#"
-            />
-            <div className={styles.Notice_content}>
-              <p className={styles.Notice_bullet}>[글머리]</p>
-              <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-              <p className={styles.Notice_authorName}>정성원</p>
-              <p className={styles.Notice_date}>2020-03-07</p>
-              <p className={styles.Notice_likes}>❤ 13</p>
-            </div>
-          </div>
-        </li>
-        <li>
-        <div className={styles.Notice_Card}>
-            <img
-              alt="articleImage"
-              className={styles.Notice_Image}
-              src="#"
-            />
-            <div className={styles.Notice_content}>
-              <p className={styles.Notice_bullet}>[글머리]</p>
-              <p className={styles.Notice_title}>Do-iT 공지사항 제목</p>
-              <p className={styles.Notice_authorName}>정성원</p>
-              <p className={styles.Notice_date}>2020-03-07</p>
-              <p className={styles.Notice_likes}>❤ 13</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  );
+          </li>  
+          )})}
+        </ul>
+      </div>
+      </div>
+    );
+  }
 }
 
 export default NoticeList;

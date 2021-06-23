@@ -15,15 +15,13 @@ import NoticeRegistration from './NoticeRegistration/NoticeRegistration';
 
 function App(props) {
   const { getToken, setToken } = props
-  var timer1 = null
-  var setTimer = (timer) => {
-    if(timer !== null && window.location.pathname!='/'){
-      timer();
-    }
+  var state = {
+    NoticeID: 0
   }
-  console.log(getToken)
-  
-  
+  var setNoticeID = (id) => {
+    this.state.NoticeID = id
+  }
+
   return (
     <div className="App">
       <Router>
@@ -35,7 +33,9 @@ function App(props) {
           <Route exact path='/' component={MainPage}
           />
           <Route exact path='/StudyList' component = {StudyList}/>
-          <Route exact path='/NoticeList' component = {NoticeList}/>
+          <Route exact path='/NoticeList' 
+            render={() => <NoticeList setNoticeID={setNoticeID}/>}
+          />
           <Route exact path='/StudyDetail' component = {StudyDetail}/>
           <Route exact path='/Login'
             render={() => <Login getToken={getToken} setToken={setToken}/>}
