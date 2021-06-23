@@ -29,7 +29,7 @@ function App(props) {
             render={() => <Login getToken={getToken} setToken={setToken} />}
           />
           <Route exact path="/Signup" component={Signup} />
-          <Route exact path="/NoticeDetail" component={NoticeDetail} />
+          <Route path="/NoticeDetail" component={NoticeDetail} />
         </div>
       </Router>
     </div>

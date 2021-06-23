@@ -1,16 +1,24 @@
 import React, { Component } from "react";
 import TopBar from "../TopBar/TopBar.js";
 import styles from "./StudyDetail.css";
+import { Link, Route, BrowserRouter as Router } from "react-router-dom";
+import axios from "axios";
 
 class StudyDetail extends React.Component {
   StudyData = (event) => {
-    axios.get("/api/study/:id").then((res) => {
-      console.log(res.study.id);
+    var wind = window.location.href;
+    var afterwind = wind.split("/");
+    var current_location = "/api/study/" + afterwind[4];
+    console.log(afterwind);
+    axios.get(current_location).then((res) => {
+      console.log(res);
     });
   };
+
   componentWillMount() {
     this.StudyData();
   }
+
   render() {
     return (
       <div className="StudyDetail">
@@ -41,7 +49,9 @@ class StudyDetail extends React.Component {
 
         <hr width="1020"></hr>
 
-        <button className="StudyDetail_List">목록</button>
+        <Link to="/StudyList">
+          <p className="StudyDetail_List">목록</p>
+        </Link>
       </div>
     );
   }

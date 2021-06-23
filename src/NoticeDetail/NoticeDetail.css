@@ -57,11 +57,13 @@
   margin-top: 10%;
   margin-left: 27%;
   font-size: 50%;
+  color: black;
 }
 
 .NoticeDetail_bottomtext {
   font-size: 70%;
   white-space: normal;
+  color: black;
 }
 
 .NoticeDetail_List {
