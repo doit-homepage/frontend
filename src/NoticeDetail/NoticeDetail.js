@@ -7,6 +7,7 @@ import { render } from "@testing-library/react";
 
 class NoticeDetail extends React.Component {
   NoticeData = (event) => {
+
     var wind = window.location.href;
     var afterwind = wind.split("/");
     var current_location = "/api/info/" + afterwind[4];
@@ -16,7 +17,6 @@ class NoticeDetail extends React.Component {
       console.log(res);
     });
   };
-
   NoticeLike = (event) => {
     axios
       .post("/api/info/like", { user_id: "userid", notice_id: "noticeid" })

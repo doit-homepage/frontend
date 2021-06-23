@@ -6,35 +6,35 @@ require("react-datepicker/dist/react-datepicker.css");
 
 var url = "http://localhost:3000/";
 const Signup = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  var state = {
-    id: "",
-    pw: "",
-    pw_check: "",
-    student_num: "",
-    id_check: false,
-    num_check: false,
-    email: "",
-    authNum: "",
-    email_check: "",
-    auth: false,
-  };
-  var submit_check = (event) => {
-    event.preventDefault();
-    return true;
-    return false;
-  };
-  var submit_action = (event) => {
-    if (
-      state["pw"] == state["pw_check"] &&
-      state["num_check"] == true &&
-      state["id_check"] == true
-    ) {
-      axios.post("/api/user", state).then((res) => {
-        if (res.data.success == true) {
-          window.location.href = "/login";
-        } else {
-          alert(res);
+
+    const [startDate, setStartDate] = useState(new Date());
+    var state = {
+        id: '',
+        pw: '',
+        pw_check: '',
+        student_num: '',
+        id_check: false,
+        num_check: false,
+        email: '',
+        authNum: '',
+        email_check: '',
+        auth: false
+    }
+    var submit_check = (event) => {
+        event.preventDefault();
+        return true;
+        return false;
+    }
+    var submit_action = (event) => {
+        if (state['pw'] == state['pw_check'] && state['num_check'] == true && state['id_check'] == true) {
+            axios.post('/api/user', state).then((res) => {
+                console.log(state)
+                if (res.data.success == true) {
+                    window.location.href = '/login'
+                } else {
+                    alert(res)
+                }
+            })
         }
       });
     }

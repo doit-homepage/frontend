@@ -12,11 +12,10 @@ function Login(props) {
         return true;
     }
     var submit_action = (event) => {
-        axios.post('/api/user/login',state).then((res) => {
+        axios.post('/api/user/login', state).then((res) => {
             if(res.data.success == true){
                 console.log(res.data.data)
                 setToken(res.data.data,true)
-                window.location.href = '/'
             } else {
                 alert("비밀번호 패스워드 확인")
             }

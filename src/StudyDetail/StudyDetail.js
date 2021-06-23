@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TopBar from "../TopBar/TopBar.js";
 import styles from "./StudyDetail.css";
+
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 import axios from "axios";
 
@@ -17,6 +18,7 @@ class StudyDetail extends React.Component {
 
   componentWillMount() {
     this.StudyData();
+
   }
 
   render() {
