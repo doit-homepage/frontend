@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import style from './MainPage.css';
 import { Link, Route, BrowserRouter as Router } from "react-router-dom"
 import axios from 'axios';
+import { render } from '@testing-library/react';
 require('react-datepicker/dist/react-datepicker.css')
 
 class MainPage extends Component {
@@ -9,50 +10,35 @@ class MainPage extends Component {
     info_list: [],
     study_list: []
   }
+  
+  constructor(props){
+    super(props)
+ 
+  }
   async getInfo() {
     await axios.get('/api/main', {}).then((res) => {
       this.setState({ info_list: res.data.info_list })
       this.setState({study_list: res.data.study_list})
-      
     })
   }
+    
+    
   componentDidMount(){
     this.getInfo()
   }
-  
-  render() {
-    var n = 1; // clearTimeout() 함수를 이용하여 Timeout 을 취소하기위해 사용됨
+ 
+  render(){
+    //var n = 1; // clearTimeout() 함수를 이용하여 Timeout 을 취소하기위해 사용됨
     var ObjectArray = new Array();
     ObjectArray[1] = "./do-it 사진.jpg";
     ObjectArray[2] = "./do-it 사진2.jpg";
     ObjectArray[3] = "./do-it 사진3.png";
-    var timer1;
-    var timer2;
     var study_list = this.state.info_list;
     var info_list = [];
+    
+    
 
-    function changeImage() {
-      document.getElementById("MainPage_image").src = ObjectArray[n++];
-      if (n > ObjectArray.length - 1) {
-        n = 1;
-      }
-    }
-    timer1 = setInterval(changeImage, 7000);
 
-    var k = 1
-    function changeBack() {
-      document.getElementById("MainPage_back").src = ObjectArray[k++];
-      if (k > ObjectArray.length - 1) {
-        k = 1;
-      }
-    }
-
-    timer2 = setInterval(changeBack, 7000);
-
-    function endTime() {
-      clearInterval(timer1);
-      clearInterval(timer2);
-    }
 
     return (
       <div className="MainPage">
@@ -69,7 +55,7 @@ class MainPage extends Component {
           <div className="MainPage_Notice">
             <p id="MainPage_notice">공지사항</p>
             <Link to="/NoticeList">
-              <p onClick="endTime()" id="MainPage_more">more+</p>
+              <p id="MainPage_more">more+</p>
             </Link>
 
             {this.state.info_list.map((data) => {
@@ -91,7 +77,7 @@ class MainPage extends Component {
           <div className="MainPage_Study">
             <p id="MainPage_notice">스터디/프로젝트</p>
             <Link to="/StudyList">
-              <p onClick="endTime()" onClick={endTime} id="MainPage_more">more+</p>
+              <p onClick="endTime()" onClick={this.endTime} id="MainPage_more">more+</p>
             </Link>
             {this.state.study_list.map((data) => {
               return (
@@ -113,7 +99,7 @@ class MainPage extends Component {
         </div>
       </div>
     );
-  }
 }
 
+}
 export default MainPage;

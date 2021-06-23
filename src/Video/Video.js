@@ -15,7 +15,7 @@ class Video extends React.Component {
 
     let room = 'foo';
 
-    let socket = io.connect('http://localhost:3000');
+    let socket = io.connect('http://192.168.0.20:3000');
 
     if (room !== '') {
       socket.emit('create', room);

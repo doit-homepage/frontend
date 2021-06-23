@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "http-proxy-middleware": "^1.1.0",
+    "opencv-react": "0.0.5",
     "react": "^17.0.1",
     "react-calendar": "^3.3.1",
     "react-datepicker": "^3.8.0",
@@ -17,9 +18,9 @@
     "react-scripts": "4.0.3",
     "reactstrap": "^8.9.0",
     "redux": "^4.0.5",
+    "sass": "^1.32.8",
     "socket.io-client": "^4.0.1",
     "socketio": "^1.0.0",
-    "sass": "^1.32.8",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
