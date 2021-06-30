@@ -18,7 +18,6 @@ class StudyDetail extends React.Component {
 
   componentWillMount() {
     this.StudyData();
-
   }
 
   render() {
@@ -27,13 +26,21 @@ class StudyDetail extends React.Component {
         <div className="StudyDetail_text">스터디 / 프로젝트</div>
         <hr width="1020"></hr>
         <div className="StudyDetail_Box_top">
-          <p className="StudyDetail_title">[글머리] 웹스터디 모집 </p>
-          <p className="StudyDetail_studentnum">모집인원: 5명 &nbsp;</p>
-          <p className="SudyDetail_date">2020-03-08 - 2020-03-18</p>
+          <p className="StudyDetail_title">
+            {this.state.StudyDetailData.header}{" "}
+            {this.state.StudyDetailData.title}{" "}
+          </p>
+          <p className="StudyDetail_studentnum">
+            모집인원: {this.state.StudyDetailData.student_num} &nbsp;
+          </p>
+          <p className="SudyDetail_date">
+            {this.state.StudyDetailData.staer_date}-{" "}
+            {this.state.StudyDetailData.end_date}
+          </p>
         </div>
 
         <div className="StudyDetail_writerinfo">
-          정성원 &nbsp; 2020-03-07&nbsp; 조회수210
+          {this.state.StudyDetailData.writer}&nbsp; 2020-03-07 &nbsp; 조회수210
         </div>
         <p div className="StudyDetail_add">
           첨부파일: 참고자료.xlsx
