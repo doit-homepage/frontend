@@ -7,7 +7,6 @@ import { render } from "@testing-library/react";
 
 class NoticeDetail extends React.Component {
   NoticeData = (event) => {
-
     var wind = window.location.href;
     var afterwind = wind.split("/");
     var current_location = "/api/info/" + afterwind[4];
@@ -45,15 +44,19 @@ class NoticeDetail extends React.Component {
         <div className="NoticeDetail_text">공지사항</div>
         <hr width="1020"></hr>
         <div className="NoticeDetailBox_top">
-          <p className="NoticeDetail_notice"> [글머리] 공지사항 입니다!</p>
+          <p className="NoticeDetail_notice">
+            {" "}
+            {this.state.NoticeData.header} {this.state.NoticeData.content}
+          </p>
           <p className="NoticeDetail_Like">{this.state.NoticeData.like}</p>
           <button onClick={this.NoticeLike()}>❤️</button>
         </div>
         <div className="NoticeDetail_writerinfo">
-          유가은 &nbsp; 2021.09.11 &nbsp; 조회수210
+          {this.state.NoticeData.writer} &nbsp; {this.state.NoticeData.date}{" "}
+          &nbsp;
         </div>
         <p div className="NoticeDetail_add">
-          첨부파일: 참고자료.xlsx
+          첨부파일: {this.state.NoticeData.file}
         </p>
         <div className="NoticeDetailBox_bottom"></div>
         <hr width="1020"></hr>
